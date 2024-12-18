@@ -11,7 +11,6 @@ import {
   FaDownload, 
   FaDatabase, 
   FaCloud,
-  FaWindows,
   FaCode,
   FaQrcode 
 } from "react-icons/fa";
@@ -198,7 +197,7 @@ export default function Page() {
               <p className="text-gray-300 dark:text-gray-600 leading-relaxed">
                 I am a dedicated .NET Backend Developer with expertise in building robust and scalable 
                 enterprise applications. My focus is on developing high-performance APIs, microservices, 
-                and database solutions using Microsoft's technology stack. I have a strong foundation in 
+                and database solutions using Microsoft&apos;s technology stack. I have a strong foundation in 
                 C#, ASP.NET Core, and SQL Server, complemented by experience with cloud technologies 
                 and modern development practices.
               </p>
@@ -266,7 +265,7 @@ export default function Page() {
               className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4"
               variants={staggerChildrenVariants}
             >
-              {skills.map((skill, index) => (
+              {skills.map((skill) => (
                 <motion.div
                   key={skill.name}
                   variants={fadeInUpVariants}
