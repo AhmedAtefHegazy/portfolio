@@ -12,7 +12,8 @@ import {
   FaDatabase, 
   FaCloud,
   FaWindows,
-  FaCode 
+  FaCode,
+  FaQrcode 
 } from "react-icons/fa";
 import { SiDotnet, SiDocker } from "react-icons/si";
 import { TbBrandCSharp } from "react-icons/tb";
@@ -76,7 +77,7 @@ export default function Page() {
                 <div className="absolute inset-0 bg-gradient-to-r from-purple-400 to-pink-600 rounded-full blur-md opacity-75" />
                 <div className="relative w-48 h-48 rounded-full overflow-hidden border-4 border-white dark:border-gray-800">
                   <Image
-                    src="/ahmed.jpg"
+                    src="./ahmed.jpg"
                     alt="Ahmed Atef Hegazy"
                     fill
                     style={{ objectFit: "cover" }}
@@ -156,6 +157,20 @@ export default function Page() {
                     <FaDownload className="w-4 h-4" />
                     <span className="text-sm font-medium">Download CV</span>
                   </motion.a>
+
+                  {/* QR Code Button */}
+                  <motion.button
+                    onClick={() => window.open(`https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=${encodeURIComponent('https://ahmedatefsyhh.github.io/portfolio')}`, '_blank')}
+                    whileHover={{ scale: 1.1 }}
+                    whileTap={{ scale: 0.95 }}
+                    className="p-3 bg-gray-800/30 dark:bg-white/30 rounded-full backdrop-blur-lg
+                             border border-gray-700/50 dark:border-gray-200/50 shadow-lg
+                             hover:border-purple-500/50 transition-all duration-300
+                             text-purple-400 dark:text-purple-600"
+                    aria-label="Show QR Code"
+                  >
+                    <FaQrcode className="w-6 h-6" />
+                  </motion.button>
                 </motion.div>
               </div>
             </div>
