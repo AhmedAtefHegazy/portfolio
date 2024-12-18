@@ -4,15 +4,15 @@ import { motion } from "framer-motion";
 import ScrollSection from "@/components/ScrollSection";
 import ThemeToggle from "@/components/ThemeToggle";
 import Image from "next/image";
-import { 
-  FaLinkedin, 
-  FaWhatsapp, 
-  FaGithub, 
-  FaDownload, 
-  FaDatabase, 
+import {
+  FaLinkedin,
+  FaWhatsapp,
+  FaGithub,
+  FaDownload,
+  FaDatabase,
   FaCloud,
   FaCode,
-  FaQrcode 
+  FaQrcode,
 } from "react-icons/fa";
 import { SiDotnet, SiDocker } from "react-icons/si";
 import { TbBrandCSharp } from "react-icons/tb";
@@ -29,14 +29,14 @@ export default function Page() {
 
   const fadeInUpVariants = {
     hidden: { opacity: 0, y: 20 },
-    visible: { 
-      opacity: 1, 
+    visible: {
+      opacity: 1,
       y: 0,
-      transition: { 
+      transition: {
         duration: 0.6,
-        ease: "easeOut"
-      }
-    }
+        ease: "easeOut",
+      },
+    },
   };
 
   const staggerChildrenVariants = {
@@ -44,8 +44,25 @@ export default function Page() {
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.2
-      }
+        staggerChildren: 0.2,
+      },
+    },
+  };
+
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'Person',
+    name: 'Ahmed Atef Hegazy',
+    jobTitle: 'Backend Developer',
+    url: 'https://ahmedatefsyhh.github.io/portfolio',
+    sameAs: [
+      'https://www.linkedin.com/in/ahmed-atef-hegazy/',
+      'https://github.com/ahmedatefsyhh'
+    ],
+    knowsAbout: ['.NET Core', 'C#', 'SQL Server', 'Azure DevOps', 'Docker', 'Azure Cloud'],
+    worksFor: {
+      '@type': 'Organization',
+      name: 'Your Company Name'
     }
   };
 
@@ -56,7 +73,7 @@ export default function Page() {
 
         {/* Hero Section */}
         <ScrollSection>
-          <motion.section 
+          <motion.section
             className="mb-24 relative"
             variants={fadeInUpVariants}
             initial="hidden"
@@ -95,7 +112,7 @@ export default function Page() {
                 </h2>
 
                 {/* Social Links and CV Button */}
-                <motion.div 
+                <motion.div
                   className="flex flex-wrap gap-4"
                   variants={staggerChildrenVariants}
                   initial="hidden"
@@ -141,7 +158,7 @@ export default function Page() {
                   >
                     <FaGithub className="w-6 h-6" />
                   </motion.a>
-                  
+
                   {/* Download CV Button */}
                   <motion.a
                     href="/Ahmed-Atef-CV.pdf"
@@ -159,7 +176,14 @@ export default function Page() {
 
                   {/* QR Code Button */}
                   <motion.button
-                    onClick={() => window.open(`https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=${encodeURIComponent('https://ahmedatefsyhh.github.io/portfolio')}`, '_blank')}
+                    onClick={() =>
+                      window.open(
+                        `https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=${encodeURIComponent(
+                          "https://ahmedatefsyhh.github.io/portfolio"
+                        )}`,
+                        "_blank"
+                      )
+                    }
                     whileHover={{ scale: 1.1 }}
                     whileTap={{ scale: 0.95 }}
                     className="p-3 bg-gray-800/30 dark:bg-white/30 rounded-full backdrop-blur-lg
@@ -178,7 +202,7 @@ export default function Page() {
 
         {/* About Me Section */}
         <ScrollSection>
-          <motion.section 
+          <motion.section
             className="mb-24 relative"
             variants={fadeInUpVariants}
             initial="hidden"
@@ -195,21 +219,33 @@ export default function Page() {
                         border border-gray-700/50 dark:border-gray-200/50 shadow-xl"
             >
               <p className="text-gray-300 dark:text-gray-600 leading-relaxed">
-                I am a dedicated .NET Backend Developer with expertise in building robust and scalable 
-                enterprise applications. My focus is on developing high-performance APIs, microservices, 
-                and database solutions using Microsoft&apos;s technology stack. I have a strong foundation in 
-                C#, ASP.NET Core, and SQL Server, complemented by experience with cloud technologies 
-                and modern development practices.
+                I am a dedicated .NET Backend Developer with expertise in
+                building robust and scalable enterprise applications. My focus
+                is on developing high-performance APIs, microservices, and
+                database solutions using Microsoft&apos;s technology stack. I
+                have a strong foundation in C#, ASP.NET Core, and SQL Server,
+                complemented by experience with cloud technologies and modern
+                development practices.
               </p>
               <div className="mt-6 grid grid-cols-2 gap-4">
                 <div>
-                  <h4 className="font-semibold text-purple-400 dark:text-purple-600 mb-2">Education</h4>
-                  <p className="text-gray-300 dark:text-gray-600">Your University</p>
-                  <p className="text-sm text-gray-400">Computer Science • 2018-2022</p>
+                  <h4 className="font-semibold text-purple-400 dark:text-purple-600 mb-2">
+                    Education
+                  </h4>
+                  <p className="text-gray-300 dark:text-gray-600">
+                    Your University
+                  </p>
+                  <p className="text-sm text-gray-400">
+                    Computer Science • 2018-2022
+                  </p>
                 </div>
                 <div>
-                  <h4 className="font-semibold text-purple-400 dark:text-purple-600 mb-2">Location</h4>
-                  <p className="text-gray-300 dark:text-gray-600">Cairo, Egypt</p>
+                  <h4 className="font-semibold text-purple-400 dark:text-purple-600 mb-2">
+                    Location
+                  </h4>
+                  <p className="text-gray-300 dark:text-gray-600">
+                    Cairo, Egypt
+                  </p>
                   <p className="text-sm text-gray-400">Open to Remote Work</p>
                 </div>
               </div>
@@ -219,7 +255,7 @@ export default function Page() {
 
         {/* Experience Section */}
         <ScrollSection>
-          <motion.section 
+          <motion.section
             className="mb-24 relative"
             variants={fadeInUpVariants}
             initial="hidden"
@@ -240,10 +276,16 @@ export default function Page() {
                   .NET Backend Developer • 2022 - Present
                 </p>
                 <p className="text-gray-300 dark:text-gray-600">
-                  • Developed and maintained scalable RESTful APIs using ASP.NET Core and Entity Framework Core<br />
-                  • Designed and optimized SQL Server databases, improving query performance by 40%<br />
-                  • Implemented microservices architecture using Docker containers and Azure Kubernetes Service<br />
-                  • Collaborated with teams using Azure DevOps for CI/CD pipelines and agile development
+                  • Developed and maintained scalable RESTful APIs using ASP.NET
+                  Core and Entity Framework Core
+                  <br />
+                  • Designed and optimized SQL Server databases, improving query
+                  performance by 40%
+                  <br />
+                  • Implemented microservices architecture using Docker
+                  containers and Azure Kubernetes Service
+                  <br />• Collaborated with teams using Azure DevOps for CI/CD
+                  pipelines and agile development
                 </p>
               </motion.div>
             </div>
@@ -261,7 +303,7 @@ export default function Page() {
             <h3 className="text-2xl sm:text-3xl font-semibold mb-8 bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-pink-600">
               Technical Skills
             </h3>
-            <motion.div 
+            <motion.div
               className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4"
               variants={staggerChildrenVariants}
             >
@@ -288,7 +330,7 @@ export default function Page() {
 
         {/* Projects Section */}
         <ScrollSection>
-          <motion.section 
+          <motion.section
             className="mt-24"
             variants={fadeInUpVariants}
             initial="hidden"
@@ -305,14 +347,18 @@ export default function Page() {
                 className="bg-gray-800/30 dark:bg-white/30 p-6 sm:p-8 rounded-xl backdrop-blur-lg 
                           border border-gray-700/50 dark:border-gray-200/50 shadow-xl"
               >
-                <h4 className="text-xl font-semibold mb-2">E-Commerce Microservices</h4>
+                <h4 className="text-xl font-semibold mb-2">
+                  E-Commerce Microservices
+                </h4>
                 <p className="text-purple-400 dark:text-purple-600 mb-4">
                   .NET Core • SQL Server • Azure
                 </p>
                 <p className="text-gray-300 dark:text-gray-600 mb-4">
-                  A scalable e-commerce platform built with microservices architecture using .NET Core. 
-                  Features include user authentication, product catalog, shopping cart, and order processing. 
-                  Implemented using Domain-Driven Design principles and CQRS pattern.
+                  A scalable e-commerce platform built with microservices
+                  architecture using .NET Core. Features include user
+                  authentication, product catalog, shopping cart, and order
+                  processing. Implemented using Domain-Driven Design principles
+                  and CQRS pattern.
                 </p>
                 <div className="flex gap-4">
                   <motion.a
@@ -348,6 +394,10 @@ export default function Page() {
           <div className="absolute bottom-1/4 left-1/4 w-72 h-72 bg-blue-500 rounded-full mix-blend-multiply filter blur-xl opacity-10 animate-blob animation-delay-4000" />
         </div>
       </div>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
     </main>
   );
 }

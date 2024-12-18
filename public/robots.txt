@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://ahmedatefsyhh.github.io/portfolio/sitemap.xml 
