@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import ScrollSection from "@/components/ScrollSection";
 import ThemeToggle from "@/components/ThemeToggle";
 import Image from "next/image";
-import { FaLinkedin, FaWhatsapp } from "react-icons/fa";
+import { FaLinkedin, FaWhatsapp, FaGithub } from "react-icons/fa";
 
 export default function Page() {
   return (
@@ -73,6 +73,19 @@ export default function Page() {
                              text-purple-400 dark:text-purple-600"
                   >
                     <FaWhatsapp className="w-6 h-6" />
+                  </motion.a>
+                  <motion.a
+                    href="https://github.com/ahmedatefsyhh"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    whileHover={{ scale: 1.1 }}
+                    whileTap={{ scale: 0.95 }}
+                    className="p-3 bg-gray-800/30 dark:bg-white/30 rounded-full backdrop-blur-lg
+                             border border-gray-700/50 dark:border-gray-200/50 shadow-lg
+                             hover:border-purple-500/50 transition-all duration-300
+                             text-purple-400 dark:text-purple-600"
+                  >
+                    <FaGithub className="w-6 h-6" />
                   </motion.a>
                 </div>
               </div>
