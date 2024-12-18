@@ -3,11 +3,15 @@ import Head from "next/head";
 interface MetaTagsProps {
   title: string;
   description: string;
-  image?: string;
-  url: string;
 }
 
-const MetaTags = ({ title, description, image, url }: MetaTagsProps) => {
+interface MetaTagsProps {
+  title: string;
+  description: string;
+  url: string;  // Add the url prop
+}
+
+const MetaTags = ({ title, description, url }: MetaTagsProps) => {
   return (
     <Head>
       {/* Basic Meta Tags */}

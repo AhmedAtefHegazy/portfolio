@@ -35,7 +35,7 @@ export const metadata = {
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://ahmedatefsyhh.github.io/portfolio",
+    url: "https://[your-new-username].github.io/portfolio",
     title: "Ahmed Atef Hegazy | Backend Developer",
     description:
       "Experienced .NET Backend Developer specializing in C#, ASP.NET Core, and Azure Cloud Services.",
